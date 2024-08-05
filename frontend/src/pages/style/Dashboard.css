@@ -1,0 +1,82 @@
+/* style/Dashboard.css */
+
+.main-content {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  font-weight: 600;
+}
+
+.book-list {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-list h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: #444;
+  font-weight: 400;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  transition: background-color 0.3s;
+}
+
+li:hover {
+  background-color: #f1f1f1;
+}
+
+.book-thumbnail {
+ 
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.book-details {
+  padding: 0 10px;
+}
+
+h4 {
+  font-size: 18px;
+  color: #5571fd;
+  margin: 0 0 5px;
+  font-weight: 600;
+}
+
+p {
+  margin: 5px 0;
+  color: #666;
+}
+
+strong {
+  color: #ec2e2e;
+}
+
+

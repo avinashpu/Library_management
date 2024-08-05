@@ -1,9 +1,9 @@
 
 import React from 'react';
-
+import './style/AddBook.css';
 const BooksPage = () => {
   return (
-    <div>
+    <div className="main-content">
       <h2>Add Books </h2>
       <p>books</p>
       
