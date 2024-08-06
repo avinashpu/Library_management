@@ -6,7 +6,13 @@ const bookRoutes = require('./src/routes/bookRoutes');
 const app = express();
 
 // Middleware
- app.use(cors());
+const corsOptions = {
+    origin: '*',  // Replace with your frontend URL or an array of URLs
+    Credential:true,
+    methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
+    allowedHeaders: 'Content-Type, Authorization',
+  };
+  app.use(cors(corsOptions));
  app.use(express.json());
 
 connectDB();
