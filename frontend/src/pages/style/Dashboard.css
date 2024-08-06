@@ -1,28 +1,13 @@
 .main-content {
-  margin-left: 250px; /* Default margin for larger screens to accommodate the sidebar */
+  margin-left: 250px;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: calc(100vh - 3.5rem); /* Full height minus the header height */
+  max-height: calc(100vh - 3.5rem); 
   overflow-y: auto;
   position: relative;
-  padding-top: 3.5rem; /* Space for the fixed header */
-  transition: margin-left 0.3s ease; /* Smooth transition for margin changes */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 200px; /* Adjust margin for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    margin-left: 0; /* Full width for very small screens */
-    padding: 10px; /* Adjust padding for very small screens */
-    padding-top: 3rem; /* Adjust padding-top to fit under the fixed header */
-  }
+  padding-top: 3.5rem; 
+  transition: margin-left 0.3s ease; 
 }
 
 h2 {
@@ -84,3 +69,26 @@ ul {
   font-weight: 600;
 }
 
+.search-input {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-left: 0; 
+    padding: 10px; 
+    padding-top: 3rem; 
+  }
+}

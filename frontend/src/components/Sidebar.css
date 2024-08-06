@@ -1,17 +1,17 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 250px; /* Default width for larger screens */
+  width: 250px;
   background-color: #f4f4f4;
   padding: 1.5rem;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  position: fixed; /* Fixes the sidebar to the left of the viewport */
-  top: 3.5rem; /* Positioned below the fixed header */
+  position: fixed;
+  top: 3.5rem; 
   left: 0;
-  height: calc(100vh - 3.5rem); /* Full height minus the header height */
-  overflow-y: auto; /* Allows scrolling if content exceeds height */
-  transition: width 0.3s ease; /* Smooth transition for width changes */
-  z-index: 900; /* Ensures the sidebar is below the header */
+  height: calc(100vh - 3.5rem); 
+  overflow-y: auto; 
+  transition: width 0.3s ease; 
+  z-index: 900; 
 }
 
 .sidebar ul {
@@ -45,19 +45,19 @@
 /* Responsive Styles */
 @media (max-width: 768px) {
   .sidebar {
-    width: 200px; /* Adjust width for smaller screens */
+    width: 200px; 
   }
 }
 
 @media (max-width: 480px) {
   .sidebar {
     width: 100%;
-    height: auto; /* Auto height for small screens */
-    top: 3rem; /* Adjust top position to fit under the fixed header */
-    position: relative; /* Switch to relative positioning */
+    height: auto; 
+    top: 3rem; 
+    position: relative; 
   }
 
   .sidebar a {
-    padding: 1rem; /* Adjust padding for smaller screens */
+    padding: 1rem; 
   }
 }

@@ -7,8 +7,10 @@ const Dashboard = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState(''); 
+  const [filteredBooks, setFilteredBooks] = useState([]); 
 
-  // Function to fetch books from the API
+  
   const fetchBooks = async () => {
     setLoading(true);
     setError(null);
@@ -20,6 +22,7 @@ const Dashboard = () => {
 
       if (Array.isArray(response.data)) {
         setBooks(response.data);
+        setFilteredBooks(response.data); 
         console.log('Books data:', response.data);
       } else {
         console.error('Unexpected response structure:', response.data);
@@ -37,36 +40,51 @@ const Dashboard = () => {
     fetchBooks();
   }, []);
 
+  // Function to handle search input change
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    const filtered = books.filter((book) =>
+      book.title.toLowerCase().includes(query) || 
+      book.authors.some((author) => author.toLowerCase().includes(query))
+    );
+    setFilteredBooks(filtered);
+  };
+
   return (
     <div className="main-content">
       <h2>Welcome to the Library Management System</h2>
 
+      {/* Search Input */}
+      <input 
+        type="text"
+        value={searchQuery}
+        onChange={handleSearch}
+        placeholder="Search books by title or author..."
+        className="search-input"
+      />
+
       {loading && <p className="loading">Loading books...</p>}
       {error && <p className="error">Error: {error}</p>}
 
-      {!loading && !error && books.length > 0 ? (
+      {!loading && !error && filteredBooks.length > 0 ? (
         <main className="book-list">
-          
           <h3>Available Books</h3>
           <ul>
-            {books.map((book) => (
+            {filteredBooks.map((book) => (
               <li key={book._id || book.isbn}>
                 <img src={book.thumbnailUrl} alt={book.title} className="book-thumbnail" />
                 <div className="book-details">
                   <h4>{book.title}</h4>
                   <p><strong>Author(s):</strong> {book.authors.join(', ')}</p>
-                  {/* <p><strong>ISBN:</strong> {book.isbn}</p> */}
-                  {/* <p><strong>Page Count:</strong> {book.pageCount}</p> */}
-                  {/* <p><strong>Published Date:</strong> {new Date(book.publishedDate).toLocaleDateString()}</p>
-                  <p><strong>Status:</strong> {book.status}</p> */}
-                  {/* <p><strong>Description:</strong> {book.shortDescription}</p> */}
                 </div>
               </li>
             ))} 
           </ul>
         </main>
       ) : (
-        !loading && !error && <p>No books available.</p>
+        !loading && !error && <p>No books found.</p>
       )}
     </div>
   );
