@@ -1,17 +1,34 @@
-/* style/Dashboard.css */
-
 .main-content {
+  margin-left: 250px; /* Default margin for larger screens to accommodate the sidebar */
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-height: 80vh; 
-  overflow-y: auto; 
+  max-height: calc(100vh - 3.5rem); /* Full height minus the header height */
+  overflow-y: auto;
+  position: relative;
+  padding-top: 3.5rem; /* Space for the fixed header */
+  transition: margin-left 0.3s ease; /* Smooth transition for margin changes */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 200px; /* Adjust margin for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    margin-left: 0; /* Full width for very small screens */
+    padding: 10px; /* Adjust padding for very small screens */
+    padding-top: 3rem; /* Adjust padding-top to fit under the fixed header */
+  }
 }
 
 h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  color: #333;
+  margin-top:3.5rem;
+  font-size: 28px;
+  color: #fe6b09;
   font-weight: 600;
 }
 
@@ -23,12 +40,12 @@ h2 {
 }
 
 .book-list h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #444;
+  margin-bottom: 0px;
+  font-size: 24px;
+  color: #3c0dfa;
   font-weight: 400;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
+ 
+  
 }
 
 ul {
@@ -36,47 +53,34 @@ ul {
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 10px;
   list-style-type: none;
-  padding: 0;
+  padding: 5%;
   margin: 0;
 }
 
-li {
-  background-color: #fff;
+.book-list li {
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  transition: background-color 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-li:hover {
-  background-color: #f1f1f1;
+.book-list li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.book-thumbnail {
- 
-  border-radius: 8px;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
+
 
 .book-details {
-  padding: 0 10px;
+  margin-top: 20px;
 }
 
-h4 {
+.book-details h4 {
+  margin: 0;
   font-size: 18px;
-  color: #5571fd;
-  margin: 0 0 5px;
+  color: #fd6464;
   font-weight: 600;
 }
-
-p {
-  margin: 5px 0;
-  color: #666;
-}
-
-strong {
-  color: #ec2e2e;
-}
-
 

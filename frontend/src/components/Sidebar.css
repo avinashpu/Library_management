@@ -1,40 +1,63 @@
 .sidebar {
-    width: 20%;
-    background-color: #f4f4f4;
-    padding: 0.8rem;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    margin: 0;
-    font-family: Arial, sans-serif;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 250px; /* Default width for larger screens */
+  background-color: #f4f4f4;
+  padding: 1.5rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* Fixes the sidebar to the left of the viewport */
+  top: 3.5rem; /* Positioned below the fixed header */
+  left: 0;
+  height: calc(100vh - 3.5rem); /* Full height minus the header height */
+  overflow-y: auto; /* Allows scrolling if content exceeds height */
+  transition: width 0.3s ease; /* Smooth transition for width changes */
+  z-index: 900; /* Ensures the sidebar is below the header */
+}
+
+.sidebar ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 1rem 0;
+}
+
+.sidebar a {
+  display: block;
+  text-decoration: none;
+  color: #000;
+  padding: 1.2rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a.active {
+  font-weight: bold;
+  color: #4CAF50;
+  background-color: #e8f5e9;
+  border-color: #4CAF50;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Adjust width for smaller screens */
   }
-  
-  .sidebar ul {
-    
-    padding: 0;
-    margin: 0;
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+    height: auto; /* Auto height for small screens */
+    top: 3rem; /* Adjust top position to fit under the fixed header */
+    position: relative; /* Switch to relative positioning */
   }
-  
-  .sidebar li {
-    margin: 1rem 0;
-  }
-  
+
   .sidebar a {
-    display: block;
-    text-decoration: none;
-    color: #000;
-    padding: 1rem;
-    background-color: #fff; 
-    border: 1px solid #ddd; 
-    border-radius: 5px; 
-   
-  
-  
+    padding: 1rem; /* Adjust padding for smaller screens */
   }
-  
-  .sidebar a.active {
-    font-weight: bold;
-    color: #4CAF50;
-    background-color: #e8f5e9; 
-    border-color: #4CAF50;
-  }
-  
+}

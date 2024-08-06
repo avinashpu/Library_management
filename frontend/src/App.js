@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
-
 import BooksPage from './pages/AddBook';
 import MembersPage from './pages/MembersPage';
 import TransactionsPage from './pages/TransactionsPage';
@@ -14,8 +13,9 @@ const App = () => {
     <Router>
       <div className="app">
         <Header />
+        <Sidebar />
         <div className="content-wrapper">
-          <Sidebar />
+          
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/books" element={<BooksPage />} />
