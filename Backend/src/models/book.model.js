@@ -2,15 +2,15 @@ const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema({
     title: { type: String, required: true },
-    isbn: { type: String, required: true },
-    pageCount: { type: Number, required: true },
-    publishedDate: { type: Date, required: true },
-    thumbnailUrl: { type: String, required: true },
-    shortDescription: { type: String, required: true },
-    longDescription: { type: String, required: true },
-    status: { type: String, enum: ['PUBLISH', 'UNPUBLISH'], required: true },
+    isbn: { type: String },
+    pageCount: { type: Number },
+    publishedDate: { type: Date },
+    thumbnailUrl: { type: String},
+    shortDescription: { type: String },
+    longDescription: { type: String },
+    status: { type: String, enum: ['PUBLISH', 'UNPUBLISH'] },
     authors: [{ type: String, required: true }],
-    categories: [{ type: String, required: true }]
+    categories: [{ type: String}]
 });
 
 const Book = mongoose.model('Book', bookSchema);

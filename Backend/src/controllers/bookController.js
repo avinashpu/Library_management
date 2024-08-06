@@ -24,7 +24,19 @@ const getBookById = async (req, res) => {
     }
 };
 
+const addBook = async (req, res) => {
+    try {
+        const newBook = new Book(req.body);
+        const savedBook = await newBook.save();
+        res.status(201).json(savedBook);
+    } catch (err) {
+        console.error('Error adding book:', err.message);
+        res.status(500).json({ message: 'Server error', error: err.message });
+    }
+};
+
 module.exports = {
     getAllBooks,
-    getBookById
+    getBookById,
+    addBook
 };
