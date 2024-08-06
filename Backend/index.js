@@ -7,9 +7,9 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-    origin: '*',  // Replace with your frontend URL or an array of URLs
+    origin: '*', 
     Credential:true,
-    methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
+    methods: ["GET","PUT","POST","DELETE"],
     allowedHeaders: 'Content-Type, Authorization',
   };
   app.use(cors(corsOptions));
