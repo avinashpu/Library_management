@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './style/SettingsPage.css';
 const SettingsPage = () => {

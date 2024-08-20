@@ -6,8 +6,8 @@ const getAllBooks = async (req, res) => {
         const books = await Book.find();
         res.status(200).json(books);
     } catch (err) {
-        console.error('Error fetching books:', err); // Log the error for debugging
-        res.status(500).json({ message: 'Server error' }); // Send a more generic error message
+        console.error('Error fetching books:', err); 
+        res.status(500).json({ message: 'Server error' }); 
     }
 };
 

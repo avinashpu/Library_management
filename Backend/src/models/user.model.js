@@ -53,7 +53,7 @@ userSchema.methods.comparePassword = async function(candidatePassword) {
 
 userSchema.methods.generateAuthToken = async function() {
     const token = jwt.sign({ _id: this._id }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    this.refreshToken = token; // You can store the refresh token in the database if needed
+    this.refreshToken = token;
     await this.save();
     return token;
 };

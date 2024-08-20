@@ -40,7 +40,6 @@ const Dashboard = () => {
     fetchBooks();
   }, []);
 
-  // Function to handle search input change
   const handleSearch = (e) => {
     const query = e.target.value.toLowerCase();
     setSearchQuery(query);
@@ -56,7 +55,6 @@ const Dashboard = () => {
     <div className="main-content">
       <h2>Welcome to the Library Management System</h2>
 
-      {/* Search Input */}
       <input 
         type="text"
         value={searchQuery}
